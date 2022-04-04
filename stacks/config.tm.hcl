@@ -14,6 +14,6 @@ globals {
 
   ### TERRAFORM BACKEND ########################################################
 
-  state_bucket = "terraform-state-terramate-example-code-generation-${global.environment}"
+  state_bucket = "TBD-${global.environment}"
   state_prefix = terramate.path
 }

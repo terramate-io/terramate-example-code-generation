@@ -29,6 +29,7 @@ check out our blueprints:
 ## Making Changes: Change Detection + Code Generation = Fun!
 
 TODO: showcase how to change Terramate globals + generate code.
+Also provide instructions on how to define GCP projects/buckets/etc.
 
 
 ## Deploying Stacks
