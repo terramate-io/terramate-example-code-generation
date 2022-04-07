@@ -1,0 +1,19 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  static-analysis:
+    runs-on: ubuntu-20.04
+    name: Static Analysis
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run pre-commit
+        run: make test/pre-commit
