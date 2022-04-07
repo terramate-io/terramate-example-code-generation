@@ -7,4 +7,14 @@ module "cloud_run" {
 
   name     = var.name
   location = var.location
+
+  template = {
+    spec = {
+      containers = [
+        {
+          image = var.image
+        }
+      ]
+    }
+  }
 }

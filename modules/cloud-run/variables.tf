@@ -7,3 +7,8 @@ variable "location" {
   description = "(Required) The location of the cloud run instance. eg us-central1."
   type        = string
 }
+
+variable "image" {
+  description = "(Required) The container image that will be run."
+  type        = string
+}
