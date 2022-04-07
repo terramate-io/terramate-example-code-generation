@@ -2,5 +2,5 @@
 // TERRAMATE: originated from generate_hcl block on /stacks/cloud_run.tm.hcl
 
 module "cloud_run_app" {
-  source = "../../../modules/cloud-run"
+  source = "../../../../modules/cloud-run"
 }
