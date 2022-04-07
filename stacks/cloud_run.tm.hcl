@@ -14,7 +14,11 @@
 
 # These configurations can be overwritten by any of the apps
 globals {
-  app_name = "terramate-app"
+  # We get the last dir on the stack path as the name of the app
+  _stack_split_path = tm_split("/", terramate.path)
+  stack_name = global._stack_split_path[tm_length(global._stack_split_path) - 1]
+
+  app_name = "terramate-${global.stack_name}-${global.environment}"
   app_location = "europe-north1"
   app_image = "gcr.io/kubernetes-e2e-test-images/echoserver:2.2"
 }
