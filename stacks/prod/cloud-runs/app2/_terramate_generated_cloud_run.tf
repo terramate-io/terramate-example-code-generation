@@ -2,5 +2,8 @@
 // TERRAMATE: originated from generate_hcl block on /stacks/cloud_run.tm.hcl
 
 module "cloud_run_app" {
-  source = "../../../../modules/cloud-run"
+  image    = "gcr.io/kubernetes-e2e-test-images/echoserver:2.2"
+  location = "europe-north1"
+  name     = "terramate-app"
+  source   = "../../../../modules/cloud-run"
 }
