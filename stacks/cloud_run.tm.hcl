@@ -16,7 +16,7 @@
 generate_hcl "_terramate_generated_cloud_run.tf" {
   content {
     module "cloud_run_app" {
-      source = "../../../modules/cloud-run"
+      source = "../../../../modules/cloud-run"
     }
   }
 }
