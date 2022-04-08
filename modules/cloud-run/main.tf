@@ -17,4 +17,13 @@ module "cloud_run" {
       ]
     }
   }
+
+  # It will be a public service
+  # https://cloud.google.com/run/docs/authenticating/public#yaml
+  iam = [
+    {
+      members = ["allUsers"]
+      role    = "roles/run.invoker"
+    }
+  ]
 }
