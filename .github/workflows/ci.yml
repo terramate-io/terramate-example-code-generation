@@ -16,6 +16,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Set up Terramate
+        run: go install github.com/mineiros-io/terramate/cmd/terramate@main
+        env:
+          GOPROXY: direct
+
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v1
         with:
@@ -23,4 +28,4 @@ jobs:
           terraform_wrapper: false
 
       - name: Validate
-        run: terraform validate
+        run: terramate run -- terraform validate
