@@ -20,6 +20,9 @@ globals {
 
   app_name = "terramate-${global.stack_name}-${global.environment}"
   app_location = "europe-north1"
+
+  # Not all container registries are supported by cloud run
+  # - https://cloud.google.com/run/docs/deploying#images
   app_image = "gcr.io/kubernetes-e2e-test-images/echoserver:2.2"
 }
 
