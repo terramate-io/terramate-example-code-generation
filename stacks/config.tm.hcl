@@ -7,7 +7,7 @@
 globals {
   ### PROVIDER & TERRAFORM #####################################################
 
-  terraform_version                 = "~> 1.1.0"
+  terraform_version                 = "1.1.7"
   terraform_google_provider_version = "4.0"
   terraform_google_provider_region  = "europe-north1"
   terraform_google_provider_project = "mineiros-terramate-${global.environment}"
