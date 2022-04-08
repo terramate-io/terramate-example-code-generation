@@ -7,5 +7,5 @@ stack {
 
     # ensure the service account used is deployed before the app
     "/stacks/prod/service-accounts/cloud-run",
- ]
+  ]
 }

@@ -29,7 +29,7 @@ generate_hcl "_terramate_generated_cloud_run.tf" {
     module "cloud_run_app" {
       source = "${global.rootpath_rel}/modules/cloud-run"
 
-      project  = global.project
+      project = global.project
 
       service_account_name = global.app_service_account_name
 
