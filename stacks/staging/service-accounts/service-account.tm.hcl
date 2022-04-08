@@ -23,7 +23,7 @@ globals {
 generate_hcl "_terramate_generated_service_account.tf" {
   content {
     module "terraform-google-service-account" {
-      source = "github.com/mineiros-io/terraform-google-service-account?ref=v0.0.10"
+      source = "github.com/mineiros-io/terraform-google-service-account?ref=v0.0.11"
 
       account_id   = global.sa_account_id
       display_name = global.sa_display_name
