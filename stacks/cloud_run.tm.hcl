@@ -16,9 +16,10 @@
 globals {
   # We get the last dir on the stack path as the name of the app
   _stack_split_path = tm_split("/", terramate.path)
-  stack_name = global._stack_split_path[tm_length(global._stack_split_path) - 1]
 
-  app_name = "terramate-${global.stack_name}-${global.environment}"
+  stack_name        = global._stack_split_path[tm_length(global._stack_split_path) - 1]
+
+  app_name     = "terramate-${global.stack_name}-${global.environment}"
   app_location = "europe-north1"
 
   # Not all container registries are supported by cloud run
@@ -32,9 +33,9 @@ generate_hcl "_terramate_generated_cloud_run.tf" {
     module "cloud_run_app" {
       source = "../../../../modules/cloud-run"
 
-      name = global.app_name
+      name     = global.app_name
       location = global.app_location
-      image = global.app_image
+      image    = global.app_image
     }
   }
 }
@@ -48,5 +49,3 @@ generate_hcl "_terramate_generated_outputs.tf" {
     }
   }
 }
-
-

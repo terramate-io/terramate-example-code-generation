@@ -21,8 +21,8 @@ generate_hcl "_terramate_generated_backend.tf" {
       }
       # Fill out to use remote GCS state
       #backend "gcs" {
-        #bucket  = global.state_bucket
-        #prefix  = global.state_prefix
+      #bucket  = global.state_bucket
+      #prefix  = global.state_prefix
       #}
     }
   }
