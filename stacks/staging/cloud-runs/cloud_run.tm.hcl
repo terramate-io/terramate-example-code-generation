@@ -18,6 +18,8 @@ globals {
   app_location = global.location
   app_image    = "gcr.io/kubernetes-e2e-test-images/echoserver:2.2"
   app_invokers = ["allUsers"]
+
+  app_service_account_name = "cloud-run@${global.project}.iam.gserviceaccount.com"
 }
 
 
@@ -28,6 +30,8 @@ generate_hcl "_terramate_generated_cloud_run.tf" {
       source = "${global.rootpath_rel}/modules/cloud-run"
 
       project  = global.project
+
+      service_account_name = global.app_service_account_name
 
       name     = global.app_name
       location = global.app_location

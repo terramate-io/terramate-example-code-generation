@@ -24,3 +24,9 @@ variable "iam" {
   type        = any
   default     = []
 }
+
+variable "service_account_name" {
+  description = "(Optional) specify a service account to use as execution account"
+  type        = string
+  default     = null
+}

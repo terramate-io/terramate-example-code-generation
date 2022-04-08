@@ -9,8 +9,11 @@ module "cloud_run" {
   location = var.location
   project  = var.project
 
+
+
   template = {
     spec = {
+      service_account_name = var.service_account_name
       containers = [
         {
           image = var.image
