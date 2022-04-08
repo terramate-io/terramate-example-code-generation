@@ -12,3 +12,21 @@ variable "image" {
   description = "(Required) The container image that will be run."
   type        = string
 }
+
+variable "project" {
+  description = "(Optional) The project to deploy resources in. If not set, the provider project will be used."
+  type        = string
+  default     = null
+}
+
+variable "iam" {
+  description = "(Optional) IAM configuration on the cloud run"
+  type        = any
+  default     = []
+}
+
+variable "service_account_name" {
+  description = "(Optional) specify a service account to use as execution account"
+  type        = string
+  default     = null
+}

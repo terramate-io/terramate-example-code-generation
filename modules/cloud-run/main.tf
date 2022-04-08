@@ -7,9 +7,13 @@ module "cloud_run" {
 
   name     = var.name
   location = var.location
+  project  = var.project
+
+
 
   template = {
     spec = {
+      service_account_name = var.service_account_name
       containers = [
         {
           image = var.image
@@ -18,12 +22,5 @@ module "cloud_run" {
     }
   }
 
-  # It will be a public service
-  # https://cloud.google.com/run/docs/authenticating/public#yaml
-  iam = [
-    {
-      members = ["allUsers"]
-      role    = "roles/run.invoker"
-    }
-  ]
+  iam = var.iam
 }
