@@ -35,3 +35,15 @@ generate_hcl "_terramate_generated_cloud_run.tf" {
     }
   }
 }
+
+# Output the service URL so we can test it
+generate_hcl "_terramate_generated_outputs.tf" {
+  content {
+    output "url" {
+      description = "URL of the deployed application"
+      value       = module.cloud_run_app.service.status[0].url
+    }
+  }
+}
+
+
