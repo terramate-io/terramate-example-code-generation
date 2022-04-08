@@ -3,7 +3,7 @@
 # when referencing local modules.
 
 module "cloud_run" {
-  source = "git@github.com:mineiros-io/terraform-google-cloud-run.git?ref=v0.0.2"
+  source = "github.com/mineiros-io/terraform-google-cloud-run?ref=v0.0.2"
 
   name     = var.name
   location = var.location
