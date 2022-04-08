@@ -19,11 +19,12 @@ generate_hcl "_terramate_generated_backend.tf" {
     terraform {
       backend "local" {
       }
+
       # Fill out to use remote GCS state
-      #backend "gcs" {
-      #bucket  = global.state_bucket
-      #prefix  = global.state_prefix
-      #}
+      # backend "gcs" {
+      #   bucket  = global.state_bucket
+      #   prefix  = global.state_prefix
+      # }
     }
   }
 }

@@ -18,3 +18,9 @@ variable "project" {
   type        = string
   default     = null
 }
+
+variable "iam" {
+  description = "(Optional) IAM configuration on the cloud run"
+  type        = any
+  default     = []
+}
