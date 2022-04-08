@@ -12,3 +12,9 @@ variable "image" {
   description = "(Required) The container image that will be run."
   type        = string
 }
+
+variable "project" {
+  description = "(Optional) The project to deploy resources in. If not set, the provider project will be used."
+  type        = string
+  default     = null
+}

@@ -5,5 +5,6 @@ module "cloud_run_app" {
   image    = "gcr.io/kubernetes-e2e-test-images/echoserver:2.2"
   location = "europe-north1"
   name     = "terramate-app1-prod"
+  project  = "mineiros-terramate-prod"
   source   = "../../../../modules/cloud-run"
 }

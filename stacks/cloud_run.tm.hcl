@@ -33,6 +33,8 @@ generate_hcl "_terramate_generated_cloud_run.tf" {
     module "cloud_run_app" {
       source = "../../../../modules/cloud-run"
 
+      project  = global.project
+
       name     = global.app_name
       location = global.app_location
       image    = global.app_image
