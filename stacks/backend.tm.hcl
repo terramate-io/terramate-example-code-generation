@@ -2,29 +2,24 @@
 # Terramate is an orchestrator and code generator for Terraform.
 # Please see https://github.com/mineiros-io/terramate for more infromation.
 #
-# To generate/update Terraform code within the stacks run `terramate generate` from the repositories root directory.
+# To generate/update Terraform code within the stacks
+# run `terramate generate` from the repositories root directory.
 
 ##############################################################################
-### TERRAMATE GENERATION #####################################################
-##############################################################################
-#
-# We are generating HCL (.tf) files in every Terramate stack
-#
-# - _terramate_generated_backend.tf to keep backend configuration DRY
-#
-### TERRAFORM BACKEND ########################################################
-
+# Generate '_terramate_generated_backend.tf' in each stack
+# All globals will be replaced with the final value that is known by the stack
+# Any terraform code can be defined within the content block
 generate_hcl "_terramate_generated_backend.tf" {
   content {
     terraform {
-      backend "local" {
-      }
 
-      # Fill out to use remote GCS state
-      # backend "gcs" {
-      #   bucket  = global.state_bucket
-      #   prefix  = global.state_prefix
-      # }
+      # for the sake of the demo we define a local backend
+      # the path is defined in the global config and
+      # defaults to terraforms default
+      # the default values of globals are defined in config.tm.hcl in this directory
+      backend "local" {
+        path = global.local_tfstate_path
+      }
     }
   }
 }

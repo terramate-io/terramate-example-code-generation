@@ -15,6 +15,6 @@ module "cloud_run_app" {
   source               = "../../../../modules/cloud-run"
 }
 output "url" {
-  description = "URL of the deployed application"
+  description = "URL of terramate-app2-staging"
   value       = module.cloud_run_app.service.status[0].url
 }

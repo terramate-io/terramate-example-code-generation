@@ -2,40 +2,52 @@
 # Terramate is an orchestrator and code generator for Terraform.
 # Please see https://github.com/mineiros-io/terramate for more infromation.
 #
-# To generate/update Terraform code within the stacks run `terramate generate` from the repositories root directory.
+# To generate/update Terraform code within the stacks
+# run `terramate generate` from the repositories root directory.
 
 ##############################################################################
-### TERRAMATE GENERATION #####################################################
-##############################################################################
-#
-# We are generating HCL (.tf) files in every Terramate stack
-#
-# - _terramate_generated_cloud_run.tf to keep backend configuration DRY
-
-# These configurations can be overwritten by any of the apps
+# Defaults for each service account that can be overwritten in stacks below
 globals {
-  app_name     = "terramate-${global.stack_basename}-${global.environment}"
+  # The default name of a cloud run application is terramate-{stack_basename}-{environment}
+  app_name = "terramate-${global.stack_basename}-${global.environment}"
+
+  # The location where the cloud run will be deployed defaults to the global location default.
   app_location = global.location
-  app_image    = "gcr.io/kubernetes-e2e-test-images/echoserver:2.2"
+
+  # The default docker image to deploy asthe application
+  # This should be set to null or not set at all to force each stack to define a specific image
+  app_image = "gcr.io/kubernetes-e2e-test-images/echoserver:2.2"
+
+  # By default make the cloud run application public.
+  # This is not a sane default and should not be used outside of this example
   app_invokers = ["allUsers"]
 
+  # We are using the service acount generated for cloud run workloads
+  # the service account does not have any access assigned
+  # each application can overwrite this global variable to specify a service account
+  # that has application specific access rights
   app_service_account_name = "cloud-run@${global.project}.iam.gserviceaccount.com"
 }
 
-
-# Here we generate the cloud run deployment for all our app stacks.
+##############################################################################
+# Generate '_terramate_generated_cloud_run.tf' in each stack
+# All globals will be replaced with the final value that is known by the stack
+# Any terraform code can be defined within the content block
 generate_hcl "_terramate_generated_cloud_run.tf" {
   content {
+
+    # We are invoking our local wrapper to the module
+    # to also demonstrate terramate orchestration capabilities
     module "cloud_run_app" {
       source = "${global.rootpath_rel}/modules/cloud-run"
 
       project = global.project
 
+      name                 = global.app_name
+      location             = global.app_location
+      image                = global.app_image
       service_account_name = global.app_service_account_name
 
-      name     = global.app_name
-      location = global.app_location
-      image    = global.app_image
       iam = [
         {
           role    = "roles/run.invoker"
@@ -44,8 +56,9 @@ generate_hcl "_terramate_generated_cloud_run.tf" {
       ]
     }
 
+    # An output to show the cloud run url after a successful terraform apply
     output "url" {
-      description = "URL of the deployed application"
+      description = "URL of ${global.app_name}"
       value       = module.cloud_run_app.service.status[0].url
     }
   }
