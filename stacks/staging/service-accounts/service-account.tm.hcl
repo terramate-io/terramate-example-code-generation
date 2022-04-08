@@ -20,7 +20,7 @@ globals {
 
 
 # Here we generate the cloud run deployment for all our app stacks.
-generate_hcl "_terramate_generated_cloud_run.tf" {
+generate_hcl "_terramate_generated_service_account.tf" {
   content {
     module "terraform-google-service-account" {
       source = "github.com/mineiros-io/terraform-google-service-account?ref=v0.0.10"
