@@ -38,5 +38,8 @@ jobs:
       - name: Check Formatting
         run: terraform fmt -recursive -check -no-color
 
-      - name: Validate
+      - name: Initialize Stacks
+        run: terramate run -- terraform init
+
+      - name: Validate Stacks
         run: terramate run -- terraform validate
