@@ -1,3 +1,3 @@
 terramate {
-  required_version = "~> 0.0.11"
+  required_version = "~> 0.0.12"
 }
