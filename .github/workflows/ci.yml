@@ -24,7 +24,7 @@ jobs:
           go-version: "1.17"
 
       - name: Set up Terramate
-        run: go install github.com/mineiros-io/terramate/cmd/terramate@main
+        run: go install github.com/mineiros-io/terramate/cmd/terramate@v0.0.12
         env:
           GOPROXY: direct
 
