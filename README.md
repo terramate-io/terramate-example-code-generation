@@ -62,7 +62,7 @@ This is the overall structure of the project:
 * `modules/cloud-run` : Local module, useful to showcase change detection
 * `stacks/prod` : All stacks belonging to the prod environment
 * `stacks/staging` : All stacks belonging to the prod environment
-* `stacks/<env>/service-accounts/cloud-run` : Stack that creates service account for cloud run services
+* `stacks/<env>/service-accounts/cloud-run` : Stacks that creates service accounts for the cloud run services
 * `stacks/<env>/cloud-runs/[app1,app2]` : Stacks that create Cloud Run services
 
 As you navigate the project you will find multiple Terramate configuration files.
