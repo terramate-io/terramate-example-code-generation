@@ -87,7 +87,7 @@ terramate run -- cat stack.tm.hcl
 This will run on each stack directory the command `cat stack.tm.hcl`.
 The output will be the definition of all stacks.
 
-Later we are going to use the same mechanism to setup and destroy all stacks.
+Later we are going to use the same mechanism to create and destroy all stacks.
 
 
 ## Deploying Stacks
