@@ -145,3 +145,12 @@ url = "https://terramate-app1-<env>-<hash>-lz.a.run.app"
 ```
 
 Open the URL on the browser to check the running service.
+
+To avoid unnecessary charges to your account we can destroy all stacks:
+
+```
+terramate run --reverse -- terraform destroy
+```
+
+The `--reverse` flag runs all stacks in reversed order, which is desireable
+when destroying resources.
