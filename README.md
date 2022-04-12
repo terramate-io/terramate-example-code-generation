@@ -33,10 +33,52 @@ check out our blueprints:
 * Configure your GCP credentials using one of the supported [authentication mechanisms](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference#authentication)
 
 
-## Making Changes: Change Detection + Code Generation = Fun!
+# How is the code organized ?
 
-TODO: showcase how to change Terramate globals + generate code.
-Also provide instructions on how to define GCP projects/buckets/etc.
+This is the overall structure of the project:
+
+```
+├── modules
+│   └── cloud-run
+└── stacks
+    ├── prod
+    │   ├── cloud-runs
+    │   │   ├── app1
+    │   │   ├── app2
+    │   └── service-accounts
+    │       └── cloud-run
+    └── staging
+        ├── cloud-runs
+        │   ├── app1
+        │   ├── app2
+        └── service-accounts
+            └── cloud-run
+```
+
+* `modules/cloud-run` : Local module, useful to showcase change detection
+* `stacks/prod` : All stacks belonging to the prod environment
+* `stacks/staging` : All stacks belonging to the prod environment
+* `stacks/<env>/service-accounts/cloud-run` : Stack that creates service account for cloud run services
+* `stacks/<env>/cloud-runs/[app1,app2]` : Stacks that create Cloud Run services
+
+As you navigate the project you will find multiple Terramate configuration files.
+Each file will have documentation guiding you through its purpose and usage.
+
+## Listing Stacks
+
+To check if your Terramate installation is working and get an overview of the
+available stacks just run:
+
+```sh
+terramate list
+```
+
+To get a list of all the stacks defined on the project. To check how each
+stack is defined in detail you can use `terramate run` like this:
+
+```sh
+terramate run -- cat stack.tm.hcl
+```
 
 
 ## Deploying Stacks
@@ -44,6 +86,7 @@ Also provide instructions on how to define GCP projects/buckets/etc.
 TODO: showcase how to run a single or more stacks, and all of them at once if needed.
 
 
-# How is the code organized ?
+## Making Changes: Change Detection + Code Generation = Fun!
 
-TODO: showcase how to run a single or more stacks, and all of them at once if needed.
+TODO: showcase how to change Terramate globals + generate code.
+Also provide instructions on how to define GCP projects/buckets/etc.
