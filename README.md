@@ -7,15 +7,14 @@ code DRY.
 Be sure to read through the [Terramate documentation](https://github.com/mineiros-io/terramate)
 to understand the features of Terramate used here.
 
-The example is organized as two environments, each environment will have its
-own [GCP Project](https://cloud.google.com/storage/docs/projects) and on each
-environment two [Cloud Run](https://cloud.google.com/run) applications
-will be deployed.
+The example is organized as two environments, each environment will have:
 
-```mermaid
-  graph TD;
-      A-->B;
-```
+* Its own [GCP Project](https://cloud.google.com/storage/docs/projects).
+* Service account to be used when deploying Cloud Run services.
+* Two [Cloud Run](https://cloud.google.com/run) applications.
+
+The [Cloud Run](https://cloud.google.com/run) applications will be exposed
+on the internet providing a simple echo server.
 
 Note: This code is solely for demonstration purposes.
 This is not production-ready code, so use at your own risk.
