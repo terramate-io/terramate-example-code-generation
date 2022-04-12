@@ -136,3 +136,12 @@ And apply them:
 ```
 terramate run -- terraform apply
 ```
+
+For each Cloud Run service deployed there will be an output with the URL to
+the deployed service, like this:
+
+```
+url = "https://terramate-app1-<env>-<hash>-lz.a.run.app"
+```
+
+Open the URL on the browser to check the running service.
