@@ -13,8 +13,9 @@ The example is organized as two environments, each environment will have:
 * Service account to be used when deploying Cloud Run services.
 * Two [Cloud Run](https://cloud.google.com/run) applications.
 
-The [Cloud Run](https://cloud.google.com/run) applications will be exposed
-on the internet providing a simple echo server.
+The [Cloud Run](https://cloud.google.com/run) applications are simple
+echo servers that will be reachable through public URLs provided by
+[Cloud Run](https://cloud.google.com/run).
 
 Note: This code is solely for demonstration purposes.
 This is not production-ready code, so use at your own risk.
