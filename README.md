@@ -31,6 +31,9 @@ check out our blueprints:
 * [Terraform](https://www.terraform.io/) == 1.1.7
 * [Terramate](https://github.com/mineiros-io/terramate) >= 0.1.0
 * Configure your GCP credentials using one of the supported [authentication mechanisms](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference#authentication)
+* Google Cloud Provider account
+* At least one [GCP project](https://cloud.google.com/storage/docs/projects)
+* Billing is setup on GCP projects used on the example
 
 
 # How is the code organized ?
@@ -64,6 +67,7 @@ This is the overall structure of the project:
 As you navigate the project you will find multiple Terramate configuration files.
 Each file will have documentation guiding you through its purpose and usage.
 
+
 ## Listing Stacks
 
 To check if your Terramate installation is working and get an overview of the
@@ -80,13 +84,55 @@ stack is defined in detail you can use `terramate run` like this:
 terramate run -- cat stack.tm.hcl
 ```
 
+This will run on each stack directory the command `cat stack.tm.hcl`.
+The output will be the definition of all stacks.
+
+Later we are going to use the same mechanism to setup and destroy all stacks.
+
 
 ## Deploying Stacks
 
-TODO: showcase how to run a single or more stacks, and all of them at once if needed.
+Before we try to deploy any stacks, beware that this will require you
+to have [GCP credentials](https://cloud.google.com/docs/authentication/getting-started)
+and deploying infrastructure will incur into costs (check the
+[pre-requisites](#pre-requisites) section for more details).
 
+On `stacks/config.tm.hcl` you will find the `terraform_google_provider_project` 
+global which configures the project where infrastructure will be created.
 
-## Making Changes: Change Detection + Code Generation = Fun!
+It is important to change that to a [GCP project](https://cloud.google.com/storage/docs/projects)
+where you have appropriate permissions.
 
-TODO: showcase how to change Terramate globals + generate code.
-Also provide instructions on how to define GCP projects/buckets/etc.
+Once the configuration is changed we need to update the generated code by running:
+
+```sh
+terramate generate
+```
+
+At this point since our project has uncommitted changes Terramate will prevent us
+from running any commands. Create a branch (or use the flag `--disable-check-git-uncommitted`
+to disable the git checks):
+
+```
+git checkout -b <your branch name>
+```
+
+And commit all the changed files.
+
+Now we initialize all our stacks:
+
+```
+terramate run -- terraform init
+```
+
+Check how their plans look like:
+
+```
+terramate run -- terraform plan
+```
+
+And apply them:
+
+```
+terramate run -- terraform apply
+```
