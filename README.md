@@ -7,14 +7,22 @@ code DRY.
 Be sure to read through the [Terramate documentation](https://github.com/mineiros-io/terramate)
 to understand the features of Terramate used here.
 
-TODO: described briefly what will be built.
+The example is organized as two environments, each environment will have its
+own [GCP Project](https://cloud.google.com/storage/docs/projects) and on each
+environment two [Cloud Run](https://cloud.google.com/run) applications
+will be deployed.
+
+```mermaid
+  graph TD;
+      A-->B;
+```
 
 Note: This code is solely for demonstration purposes.
 This is not production-ready code, so use at your own risk.
 If you are interested in battle-tested, production-ready Terramate code,
 check out our blueprints:
 
-* TODO: Add list of blueprints awesome projects
+* [Github](https://github.com/mineiros-io/terramate-blueprint-iac-github)
 
 
 # How to use this project ?
