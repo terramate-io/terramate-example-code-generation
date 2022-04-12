@@ -34,7 +34,7 @@ check out our blueprints:
 * Configure your GCP credentials using one of the supported [authentication mechanisms](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference#authentication)
 * Google Cloud Provider account
 * At least one [GCP project](https://cloud.google.com/storage/docs/projects)
-* Billing is setup on GCP projects used on the example
+* GCP project has a proper billing account configured
 
 
 # How is the code organized ?
