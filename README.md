@@ -78,8 +78,7 @@ available stacks just run:
 terramate list
 ```
 
-To get a list of all the stacks defined on the project. To check how each
-stack is defined in detail you can use `terramate run` like this:
+To check how each stack is defined in detail you can use `terramate run`:
 
 ```sh
 terramate run -- cat stack.tm.hcl
