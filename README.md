@@ -146,7 +146,7 @@ url = "https://terramate-app1-<env>-<hash>-lz.a.run.app"
 
 Open the URL on the browser to check the running service.
 
-To avoid unnecessary charges to your account we can destroy all stacks:
+To avoid unnecessary charges to your account let's destroy all stacks:
 
 ```
 terramate run --reverse -- terraform destroy
