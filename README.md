@@ -144,6 +144,12 @@ the deployed service, like this:
 url = "https://terramate-app1-<env>-<hash>-lz.a.run.app"
 ```
 
+You can check the outputs with:
+
+```
+terramate run -- terraform output
+```
+
 Open the URL on the browser to check the running service.
 
 To avoid unnecessary charges to your account let's destroy all stacks:
