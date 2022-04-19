@@ -26,7 +26,7 @@ globals {
   # the service account does not have any access assigned
   # each application can overwrite this global variable to specify a service account
   # that has application specific access rights
-  app_service_account_name = "cloud-run-${global.environment}@${global.project}.iam.gserviceaccount.com"
+  app_service_account_name = "cloud-run@${global.project}.iam.gserviceaccount.com"
 }
 
 ##############################################################################
