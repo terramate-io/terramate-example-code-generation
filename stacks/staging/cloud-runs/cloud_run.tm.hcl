@@ -22,7 +22,7 @@ globals {
   # This is not a sane default and should not be used outside of this example
   app_invokers = ["allUsers"]
 
-  # We are using the service acount generated for cloud run workloads
+  # We are using the service account generated for cloud run workloads
   # the service account does not have any access assigned
   # each application can overwrite this global variable to specify a service account
   # that has application specific access rights
