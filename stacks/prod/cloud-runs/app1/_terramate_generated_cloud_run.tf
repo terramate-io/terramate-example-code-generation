@@ -7,7 +7,7 @@ module "cloud_run_app" {
       role = "roles/run.invoker"
     members = ["allUsers"] }
   ]
-  image                = "gcr.io/kubernetes-e2e-test-images/echoserver:2.2"
+  image                = "gcr.io/cloudrun/hello:latest"
   location             = "europe-north1"
   name                 = "terramate-app1-prod"
   project              = "mineiros-terramate-prod"

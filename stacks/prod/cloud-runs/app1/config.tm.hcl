@@ -1,3 +1,3 @@
 globals {
-  app_image = "gcr.io/kubernetes-e2e-test-images/echoserver:2.2"
+  app_image = "gcr.io/cloudrun/hello:latest"
 }
