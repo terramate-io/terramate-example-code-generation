@@ -11,7 +11,7 @@ module "cloud_run_app" {
   location             = "europe-north1"
   name                 = "terramate-app1-staging"
   project              = "mineiros-terramate-staging"
-  service_account_name = "cloud-run-staging@mineiros-terramate-staging.iam.gserviceaccount.com"
+  service_account_name = "cloud-run@mineiros-terramate-staging.iam.gserviceaccount.com"
   source               = "../../../../modules/cloud-run"
 }
 output "url" {
