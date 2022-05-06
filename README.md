@@ -19,10 +19,6 @@ echo servers that will be reachable through public URLs provided by
 
 Note: This code is solely for demonstration purposes.
 This is not production-ready code, so use at your own risk.
-If you are interested in battle-tested, production-ready Terramate code,
-check out our blueprints:
-
-* [Github](https://github.com/mineiros-io/terramate-blueprint-iac-github)
 
 
 # How to use this project ?
