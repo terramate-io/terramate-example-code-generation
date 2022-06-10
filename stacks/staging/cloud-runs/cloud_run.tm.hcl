@@ -9,7 +9,7 @@
 # Defaults for each service account that can be overwritten in stacks below
 globals {
   # The default name of a cloud run application is terramate-{stack_basename}-{environment}
-  app_name = "terramate-${global.stack_basename}-${global.environment}"
+  app_name = "terramate-${terramate.stack.path.basename}-${global.environment}"
 
   # The location where the cloud run will be deployed defaults to the global location default.
   app_location = global.location
@@ -39,7 +39,7 @@ generate_hcl "_terramate_generated_cloud_run.tf" {
     # We are invoking our local wrapper to the module
     # to also demonstrate terramate orchestration capabilities
     module "cloud_run_app" {
-      source = "${global.rootpath_rel}/modules/cloud-run"
+      source = "${terramate.stack.path.to_root}/modules/cloud-run"
 
       project = global.project
 

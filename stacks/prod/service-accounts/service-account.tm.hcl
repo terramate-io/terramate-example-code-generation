@@ -10,7 +10,7 @@
 globals {
 
   # The default acount ID to use: the stacks directory basename
-  sa_account_id = global.stack_basename
+  sa_account_id = terramate.stack.path.basename
 
   # The default display name of the Service Account: The name of the configured stack
   sa_display_name = terramate.name

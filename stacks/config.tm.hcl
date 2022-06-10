@@ -37,17 +37,4 @@ globals {
   # we use providers project and location by default
   project  = global.terraform_google_provider_project
   location = global.terraform_google_provider_region
-
-  ### HACKS ####################################################################
-  #
-  # we did not yet implement all details that we would like to use for code
-  # generation. Using Terramate Functions we can simulate some of those features.
-  # The followin variables will be replaced with terramate native version in
-  # future versions of terramate
-
-  # This is a hack that provide us the stacks basename
-  stack_basename = tm_reverse(tm_split("/", terramate.path))[0]
-
-  # This is a hack that provides us the relative path to repository root with in a stack
-  rootpath_rel = tm_join("/", [for x in tm_split("/", terramate.path) : ".." if x != ""])
 }
