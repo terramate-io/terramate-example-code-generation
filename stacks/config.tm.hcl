@@ -37,7 +37,4 @@ globals {
   # we use providers project and location by default
   project  = global.terraform_google_provider_project
   location = global.terraform_google_provider_region
-
-  # This is a hack that provides us the relative path to repository root with in a stack
-  rootpath_rel = tm_join("/", [for x in tm_split("/", terramate.path) : ".." if x != ""])
 }

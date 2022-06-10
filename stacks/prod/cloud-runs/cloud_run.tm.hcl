@@ -39,7 +39,7 @@ generate_hcl "_terramate_generated_cloud_run.tf" {
     # We are invoking our local wrapper to the module
     # to also demonstrate terramate orchestration capabilities
     module "cloud_run_app" {
-      source = "${global.rootpath_rel}/modules/cloud-run"
+      source = "${terramate.stack.path.to_root}/modules/cloud-run"
 
       project = global.project
 
