@@ -1,5 +1,5 @@
 // TERRAMATE: GENERATED AUTOMATICALLY DO NOT EDIT
-// TERRAMATE: originated from generate_hcl block on /stacks/prod/service-accounts/service-account.tm.hcl
+// TERRAMATE: originated from generate_hcl block on /stacks/service-account.tm.hcl
 
 module "terraform-google-service-account" {
   account_id   = "cloud-run"
