@@ -9,7 +9,7 @@
 # Defaults for each service account that can be overwritten in stacks below
 globals {
   # The default name of a cloud run application is terramate-{stack_basename}-{environment}
-  app_name = "terramate-${global.stack_basename}-${global.environment}"
+  app_name = "terramate-${terramate.stack.path.basename}-${global.environment}"
 
   # The location where the cloud run will be deployed defaults to the global location default.
   app_location = global.location
