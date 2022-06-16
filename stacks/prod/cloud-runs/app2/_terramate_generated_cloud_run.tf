@@ -5,7 +5,10 @@ module "cloud_run_app" {
   iam = [
     {
       role = "roles/run.invoker"
-    members = ["allUsers"] },
+      members = [
+        "allUsers",
+      ]
+    },
   ]
   image                = "gcr.io/kubernetes-e2e-test-images/echoserver:2.2"
   location             = "europe-north1"
