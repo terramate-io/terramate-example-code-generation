@@ -5,7 +5,10 @@ module "cloud_run_app" {
   iam = [
     {
       role = "roles/run.invoker"
-    members = ["allUsers"] },
+      members = [
+        "allUsers",
+      ]
+    },
   ]
   image                = "gcr.io/cloudrun/hello:latest"
   location             = "europe-north1"
