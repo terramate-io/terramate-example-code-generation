@@ -38,8 +38,11 @@ jobs:
           terraform_version: 1.2.3
           terraform_wrapper: false
 
-      - name: Check Formatting
+      - name: Check Terraform Formatting
         run: terraform fmt -recursive -check -no-color
+
+      - name: Check Terramate Formatting
+        run: terramate fmt --check
 
       - name: List all Stacks
         run: terramate list
