@@ -12,9 +12,9 @@ to understand the features of Terramate used here.
 
 The example is organized as two environments, each environment will have:
 
-* Its own [GCP Project](https://cloud.google.com/storage/docs/projects).
-* Service account to be used when deploying Cloud Run services.
-* Two [Cloud Run](https://cloud.google.com/run) applications.
+- Its own [GCP Project](https://cloud.google.com/storage/docs/projects).
+- Service account to be used when deploying Cloud Run services.
+- Two [Cloud Run](https://cloud.google.com/run) applications.
 
 The [Cloud Run](https://cloud.google.com/run) applications are simple
 echo servers that will be reachable through public URLs provided by
@@ -23,18 +23,16 @@ echo servers that will be reachable through public URLs provided by
 Note: This code is solely for demonstration purposes.
 This is not production-ready code, so use at your own risk.
 
-
 # How to use this project ?
 
 ## Pre-Requisites
 
-* [Terraform](https://www.terraform.io/) == 1.1.7
-* [Terramate](https://github.com/mineiros-io/terramate) >= 0.1.0
-* Configure your GCP credentials using one of the supported [authentication mechanisms](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference#authentication)
-* Google Cloud Provider account
-* At least one [GCP project](https://cloud.google.com/storage/docs/projects)
-* GCP project has a proper billing account configured
-
+- [Terraform](https://www.terraform.io/) == 1.2.3
+- [Terramate](https://github.com/mineiros-io/terramate) == 0.1.9
+- Configure your GCP credentials using one of the supported [authentication mechanisms](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference#authentication)
+- Google Cloud Provider account
+- At least one [GCP project](https://cloud.google.com/storage/docs/projects)
+- GCP project has a proper billing account configured
 
 # How is the code organized ?
 
@@ -58,15 +56,14 @@ This is the overall structure of the project:
             └── cloud-run
 ```
 
-* `modules/cloud-run` : Local module, useful to showcase change detection
-* `stacks/prod` : All stacks belonging to the prod environment
-* `stacks/staging` : All stacks belonging to the prod environment
-* `stacks/<env>/service-accounts/cloud-run` : Stacks that creates service accounts for the cloud run services
-* `stacks/<env>/cloud-runs/[app1,app2]` : Stacks that create Cloud Run services
+- `modules/cloud-run` : Local module, useful to showcase change detection
+- `stacks/prod` : All stacks belonging to the prod environment
+- `stacks/staging` : All stacks belonging to the staging environment
+- `stacks/<env>/service-accounts/cloud-run` : Stacks that creates service accounts for the cloud run services
+- `stacks/<env>/cloud-runs/[app1,app2]` : Stacks that create Cloud Run services
 
 As you navigate the project you will find multiple Terramate configuration files.
 Each file will have documentation guiding you through its purpose and usage.
-
 
 ## Listing Stacks
 
@@ -88,7 +85,6 @@ The output will be the definition of all stacks.
 
 Later we are going to use the same mechanism to create and destroy all stacks.
 
-
 ## Deploying Stacks
 
 Before we try to deploy any stacks, beware that this will require you
@@ -96,7 +92,7 @@ to have [GCP credentials](https://cloud.google.com/docs/authentication/getting-s
 and deploying infrastructure will incur into costs (check the
 [pre-requisites](#pre-requisites) section for more details).
 
-On `stacks/config.tm.hcl` you will find the `terraform_google_provider_project` 
+On `stacks/config.tm.hcl` you will find the `terraform_google_provider_project`
 global which configures the project where infrastructure will be created.
 
 It is important to change that to a [GCP project](https://cloud.google.com/storage/docs/projects)
