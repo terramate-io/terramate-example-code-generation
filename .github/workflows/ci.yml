@@ -10,7 +10,13 @@ on:
 
 jobs:
   static-analysis:
-    runs-on: ubuntu-20.04
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-20.04", "macos-10.15", "macos-11"]
+
     name: Static Analysis
     steps:
       - name: Checkout
@@ -34,6 +40,9 @@ jobs:
 
       - name: Check Formatting
         run: terraform fmt -recursive -check -no-color
+
+      - name: List all Stacks
+        run: terramate list
 
       - name: Initialize Stacks
         run: terramate run -- terraform init
