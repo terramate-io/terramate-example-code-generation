@@ -1,5 +1,8 @@
 # terramate-example-code-generation
 
+![CI Status](https://github.com/mineiros-io/terramate-example-code-generation/actions/workflows/ci.yml/badge.svg)
+[![Join Slack](https://img.shields.io/badge/slack-@mineiros--community-f32752.svg?logo=slack)](https://mineiros.io/slack)
+
 This project shows an example file/dir structure you can use with
 [Terramate](https://github.com/mineiros-io/terramate) to keep your Terraform
 code DRY.
