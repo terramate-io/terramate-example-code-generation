@@ -15,7 +15,7 @@ globals {
   terraform_version = "~> 1.0"
 
   # provider settings and defaults
-  terraform_google_provider_version = "4.0"
+  terraform_google_provider_version = "~> 4.0"
   terraform_google_provider_region  = "europe-north1"
 
   # this should be adjusted when testing actual deployemnts
