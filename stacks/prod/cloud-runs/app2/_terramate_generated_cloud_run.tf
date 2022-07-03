@@ -1,5 +1,5 @@
 // TERRAMATE: GENERATED AUTOMATICALLY DO NOT EDIT
-// TERRAMATE: originated from generate_hcl block on /stacks/prod/cloud-runs/cloud_run.tm.hcl
+// TERRAMATE: originated from generate_hcl block on /modules/cloud-run/cloud_run.tm.hcl
 
 module "cloud_run_app" {
   iam = [
