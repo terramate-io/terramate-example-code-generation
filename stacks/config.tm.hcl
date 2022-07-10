@@ -12,7 +12,7 @@ globals {
   # stack level
 
   # The global terraform version to use
-  terraform_version = "1.2.3"
+  terraform_version = "~> 1.0"
 
   # provider settings and defaults
   terraform_google_provider_version = "4.0"

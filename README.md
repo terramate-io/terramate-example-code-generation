@@ -27,8 +27,8 @@ This is not production-ready code, so use at your own risk.
 
 ## Pre-Requisites
 
-- [Terraform](https://www.terraform.io/) == 1.2.3
-- [Terramate](https://github.com/mineiros-io/terramate) == 0.1.9
+- [Terraform](https://www.terraform.io/) ~> 1.0
+- [Terramate](https://github.com/mineiros-io/terramate) ~> 0.1.10
 - Configure your GCP credentials using one of the supported [authentication mechanisms](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference#authentication)
 - Google Cloud Provider account
 - At least one [GCP project](https://cloud.google.com/storage/docs/projects)
