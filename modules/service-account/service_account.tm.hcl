@@ -3,7 +3,7 @@
 # Please see https://github.com/mineiros-io/terramate for more information.
 #
 # To generate/update Terraform code within the stacks
-# run `terramate generate` from the repositories root directory.
+# run `terramate generate` from root directory of the repository.
 
 # This file is defined on a very high level to simulate code deduplication between
 # different environments. The same code will be used in staging and production

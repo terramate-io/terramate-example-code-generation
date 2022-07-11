@@ -3,7 +3,7 @@
 # Please see https://github.com/mineiros-io/terramate for more information.
 #
 # To generate/update Terraform code within the stacks
-# run `terramate generate` from the repositories root directory.
+# run `terramate generate` from root directory of the repository.
 
 ##############################################################################
 # Generate '_terramate_generated_providers.tf' in each stack

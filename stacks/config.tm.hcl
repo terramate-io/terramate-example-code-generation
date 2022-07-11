@@ -2,7 +2,8 @@
 # Terramate is an orchestrator and code generator for Terraform.
 # Please see https://github.com/mineiros-io/terramate for more information.
 #
-# To generate/update Terraform code within the stacks run `terramate generate` from the repositories root directory.
+# To generate/update Terraform code within the stacks
+# run `terramate generate` from root directory of the repository.
 
 globals {
   ### TERRAFORM ###############################################################
