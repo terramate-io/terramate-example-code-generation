@@ -27,8 +27,8 @@ This is not production-ready code, so use at your own risk.
 
 ## Pre-Requisites
 
-- [Terraform](https://www.terraform.io/) ~> 1.0
-- [Terramate](https://github.com/mineiros-io/terramate) ~> 0.1.10
+- [Terraform](https://www.terraform.io/) `~> 1.0`
+- [Terramate](https://github.com/mineiros-io/terramate) `~> 0.1.11`
 - Configure your GCP credentials using one of the supported [authentication mechanisms](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference#authentication)
 - Google Cloud Provider account
 - At least one [GCP project](https://cloud.google.com/storage/docs/projects)
@@ -40,7 +40,8 @@ This is the overall structure of the project:
 
 ```
 ├── modules
-│   └── cloud-run
+│   ├── cloud-run
+│   └── service-account
 └── stacks
     ├── prod
     │   ├── cloud-runs
@@ -56,11 +57,12 @@ This is the overall structure of the project:
             └── cloud-run
 ```
 
-- `modules/cloud-run` : Local module, useful to showcase change detection
-- `stacks/prod` : All stacks belonging to the prod environment
-- `stacks/staging` : All stacks belonging to the staging environment
-- `stacks/<env>/service-accounts/cloud-run` : Stacks that creates service accounts for the cloud run services
-- `stacks/<env>/cloud-runs/[app1,app2]` : Stacks that create Cloud Run services
+- `modules/cloud-run`: Local module, useful to showcase change detection and DRY code generation.
+- `modules/service-account`: Local Terramate config that keeps code generation DRY between environments.
+- `stacks/prod`: All stacks belonging to the prod environment.
+- `stacks/staging`: All stacks belonging to the staging environment.
+- `stacks/<env>/service-accounts/cloud-run`: Stack that creates service accounts used to execute the cloud run services.
+- `stacks/<env>/cloud-runs/{app1,app2}`: Stacks that create Cloud Run services.
 
 As you navigate the project you will find multiple Terramate configuration files.
 Each file will have documentation guiding you through its purpose and usage.

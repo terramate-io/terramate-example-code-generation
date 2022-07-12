@@ -3,7 +3,7 @@
 # Please see https://github.com/mineiros-io/terramate for more information.
 #
 # To generate/update Terraform code within the stacks
-# run `terramate generate` from the repositories root directory.
+# run `terramate generate` from root directory of the repository.
 
 ##############################################################################
 # Defaults for each service account that can be overwritten in stacks below
