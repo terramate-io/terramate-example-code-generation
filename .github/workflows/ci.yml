@@ -30,7 +30,7 @@ jobs:
           go-version: "1.17"
 
       - name: Set up Terramate
-        run: go install github.com/mineiros-io/terramate/cmd/terramate@v0.1.11
+        run: go install github.com/mineiros-io/terramate/cmd/terramate@v0.2.0
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v1
