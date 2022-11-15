@@ -10,12 +10,7 @@ on:
 
 jobs:
   tests:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      fail-fast: false
-      matrix:
-        os: ["ubuntu-20.04", "macos-10.15", "macos-11"]
+    runs-on: "ubuntu-20.04"
 
     name: Run Tests
     steps:
