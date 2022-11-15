@@ -49,7 +49,7 @@ jobs:
         run: terramate list
 
       - name: Initialize Stacks
-        run: terramate run -- terraform init
+        run: terramate run --log-level=trace -- terraform init
 
       - name: Validate Stacks
         run: terramate run -- terraform validate
