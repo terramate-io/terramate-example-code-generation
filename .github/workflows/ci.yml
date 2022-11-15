@@ -24,13 +24,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: "1.17"
-
       - name: Set up Terramate
-        run: go install github.com/mineiros-io/terramate/cmd/terramate@v0.2.0
+        uses: giantswarm/install-binary-action@e97402b0aa95939ddba5b36aa77f8abc58a37fd5
+        with:
+          binary: terramate
+          version: 0.2.0
+          # https://github.com/mineiros-io/terramate/releases/download/v${version}/terramate_${version}_${os}_${arch}.tar.gz
+          download_url: "https://github.com/mineiros-io/${binary}/releases/download/v${version}/terramate_${version}_linux_x86_64.tar.gz"
+          tarball_binary_path: "${binary}"
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v1
