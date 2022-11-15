@@ -33,6 +33,9 @@ jobs:
           download_url: "https://github.com/mineiros-io/${binary}/releases/download/v${version}/terramate_${version}_linux_x86_64.tar.gz"
           tarball_binary_path: "${binary}"
 
+      - name: Clean Up Terramate Install Artifacts
+        run: rm -rf terramate
+
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v1
         with:
@@ -49,7 +52,7 @@ jobs:
         run: terramate list
 
       - name: Initialize Stacks
-        run: terramate run --log-level=trace -- terraform init
+        run: terramate run -- terraform init
 
       - name: Validate Stacks
         run: terramate run -- terraform validate
