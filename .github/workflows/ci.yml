@@ -24,8 +24,8 @@ jobs:
         with:
           binary: terramate
           version: 0.2.0
-          # https://github.com/mineiros-io/terramate/releases/download/v${version}/terramate_${version}_${os}_${arch}.tar.gz
-          download_url: "https://github.com/mineiros-io/${binary}/releases/download/v${version}/terramate_${version}_linux_x86_64.tar.gz"
+          # https://github.com/terramate-io/terramate/releases/download/v${version}/terramate_${version}_${os}_${arch}.tar.gz
+          download_url: "https://github.com/terramate-io/${binary}/releases/download/v${version}/terramate_${version}_linux_x86_64.tar.gz"
           tarball_binary_path: "${binary}"
 
       - name: Clean Up Terramate Install Artifacts

@@ -1,13 +1,13 @@
 # terramate-example-code-generation
 
-![CI Status](https://github.com/mineiros-io/terramate-example-code-generation/actions/workflows/ci.yml/badge.svg)
+![CI Status](https://github.com/terramate-io/terramate-example-code-generation/actions/workflows/ci.yml/badge.svg)
 [![Join Slack](https://img.shields.io/badge/slack-@mineiros--community-f32752.svg?logo=slack)](https://mineiros.io/slack)
 
 This project shows an example file/dir structure you can use with
-[Terramate](https://github.com/mineiros-io/terramate) to keep your Terraform
+[Terramate](https://github.com/terramate-io/terramate) to keep your Terraform
 code DRY.
 
-Be sure to read through the [Terramate documentation](https://github.com/mineiros-io/terramate)
+Be sure to read through the [Terramate documentation](https://terramate.io)
 to understand the features of Terramate used here.
 
 The example is organized as two environments, each environment will have:
@@ -28,7 +28,7 @@ This is not production-ready code, so use at your own risk.
 ## Pre-Requisites
 
 - [Terraform](https://www.terraform.io/) `~> 1.0`
-- [Terramate](https://github.com/mineiros-io/terramate) `~> 0.1.11`
+- [Terramate](https://github.com/terramate-io/terramate) `~> 0.1.11`
 - Configure your GCP credentials using one of the supported [authentication mechanisms](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference#authentication)
 - Google Cloud Provider account
 - At least one [GCP project](https://cloud.google.com/storage/docs/projects)

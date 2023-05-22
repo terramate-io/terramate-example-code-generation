@@ -1,6 +1,6 @@
 # This file is part of Terramate Configuration.
 # Terramate is an orchestrator and code generator for Terraform.
-# Please see https://github.com/mineiros-io/terramate for more information.
+# Please see https://github.com/terramate-io/terramate for more information.
 #
 # To generate/update Terraform code within the stacks
 # run `terramate generate` from root directory of the repository.
@@ -20,7 +20,7 @@ globals {
   terraform_google_provider_region  = "europe-north1"
 
   # this should be adjusted when testing actual deployemnts
-  terraform_google_provider_project = "mineiros-terramate-${global.environment}"
+  terraform_google_provider_project = "terramate-example-${global.environment}"
 
   ### global variables for use when generating backend
   # all variables defined here can be overwritten in any sub-directory and on the

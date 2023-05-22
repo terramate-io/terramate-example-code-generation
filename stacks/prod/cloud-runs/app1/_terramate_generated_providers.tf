@@ -1,7 +1,7 @@
 // TERRAMATE: GENERATED AUTOMATICALLY DO NOT EDIT
 
 provider "google" {
-  project = "mineiros-terramate-prod"
+  project = "terramate-example-prod"
   region  = "europe-north1"
 }
 terraform {
