@@ -12,7 +12,7 @@ to understand the features of Terramate used here.
 
 The example is organized as two environments, each environment will have:
 
-- Its own [GCP Project](https://cloud.google.com/storage/docs/projects).
+- Its own [Google Cloud Project](https://cloud.google.com/storage/docs/projects).
 - Service account to be used when deploying Cloud Run services.
 - Two [Cloud Run](https://cloud.google.com/run) applications.
 
@@ -21,20 +21,20 @@ echo servers that will be reachable through public URLs provided by
 [Cloud Run](https://cloud.google.com/run).
 
 Note: This code is solely for demonstration purposes.
-This is not production-ready code, so use at your own risk.
+This is not production-ready code, so use it at your own risk.
 
-# How to use this project ?
+# How to use this project?
 
 ## Pre-Requisites
 
-- [Terraform](https://www.terraform.io/) `~> 1.5`
-- [Terramate](https://github.com/terramate-io/terramate) `~> 0.3.0`
-- Configure your GCP credentials using one of the supported [authentication mechanisms](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference#authentication)
+- [Terraform](https://www.terraform.io/) `~> 1.7`
+- [Terramate](https://github.com/terramate-io/terramate) `~> 0.4.0`
+- Configure your Google Cloud credentials using one of the supported [authentication mechanisms](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference#authentication)
 - Google Cloud Provider account
-- At least one [GCP project](https://cloud.google.com/storage/docs/projects)
-- GCP project has a proper billing account configured
+- At least one [Google Cloud project](https://cloud.google.com/storage/docs/projects)
+- The Google Cloud project has a proper billing account configured
 
-# How is the code organized ?
+# How is the code organized?
 
 This is the overall structure of the project:
 
@@ -90,27 +90,22 @@ Later we are going to use the same mechanism to create and destroy all stacks.
 ## Deploying Stacks
 
 Before we try to deploy any stacks, beware that this will require you
-to have [GCP credentials](https://cloud.google.com/docs/authentication/getting-started)
-and deploying infrastructure will incur into costs (check the
+to have [Google Cloud credentials](https://cloud.google.com/docs/authentication/getting-started)
+and deploying infrastructure will incur costs (check the
 [pre-requisites](#pre-requisites) section for more details).
 
 On `stacks/config.tm.hcl` you will find the `terraform_google_provider_project`
 global which configures the project where infrastructure will be created.
 
-It is important to change that to a [GCP project](https://cloud.google.com/storage/docs/projects)
+It is important to change that to a [Google Cloud project](https://cloud.google.com/storage/docs/projects)
 where you have appropriate permissions.
 
 Once the configuration is changed we need to update the generated code by running:
-
-```sh
-terramate generate
-```
-
-At this point since our project has uncommitted changes Terramate will prevent us
+At this point, since our project has uncommitted changes Terramate will prevent us
 from running any commands. Create a branch (or use the flag `--disable-check-git-uncommitted`
 to disable the git checks):
 
-```
+```sh
 git checkout -b <your branch name>
 ```
 
@@ -118,32 +113,32 @@ And commit all the changed files.
 
 Now we initialize all our stacks:
 
-```
+```sh
 terramate run -- terraform init
 ```
 
 Check how their plans look like:
 
-```
+```sh
 terramate run -- terraform plan
 ```
 
 And apply them:
 
-```
+```sh
 terramate run -- terraform apply
 ```
 
-For each Cloud Run service deployed there will be an output with the URL to
+For each Cloud Run service deployed, there will be an output with the URL to
 the deployed service, like this:
 
-```
+```sh
 url = "https://terramate-app1-<env>-<hash>-lz.a.run.app"
 ```
 
 You can check the outputs with:
 
-```
+```sh
 terramate run -- terraform output
 ```
 
@@ -151,7 +146,7 @@ Open the URL on the browser to check the running service.
 
 To avoid unnecessary charges to your account let's destroy all stacks:
 
-```
+```sh
 terramate run --reverse -- terraform destroy
 ```
 
