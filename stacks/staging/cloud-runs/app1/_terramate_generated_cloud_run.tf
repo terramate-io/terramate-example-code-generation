@@ -12,8 +12,8 @@ module "cloud_run_app" {
   image                = "gcr.io/cloudrun/hello:latest"
   location             = "europe-north1"
   name                 = "terramate-app1-staging"
-  project              = "mineiros-terramate-staging"
-  service_account_name = "cloud-run@mineiros-terramate-staging.iam.gserviceaccount.com"
+  project              = "example-staging"
+  service_account_name = "cloud-run@example-staging.iam.gserviceaccount.com"
   source               = "../../../../modules/cloud-run"
 }
 output "url" {
