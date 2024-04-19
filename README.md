@@ -27,8 +27,8 @@ This is not production-ready code, so use it at your own risk.
 
 ## Pre-Requisites
 
-- [Terraform](https://www.terraform.io/) `~> 1.7`
-- [Terramate](https://github.com/terramate-io/terramate) `~> 0.4.0`
+- [Terraform](https://www.terraform.io/) `~> 1.8`
+- [Terramate](https://github.com/terramate-io/terramate) `~> 0.6.0`
 - Configure your Google Cloud credentials using one of the supported [authentication mechanisms](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference#authentication)
 - Google Cloud Provider account
 - At least one [Google Cloud project](https://cloud.google.com/storage/docs/projects)
