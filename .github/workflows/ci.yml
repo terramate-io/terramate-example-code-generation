@@ -20,7 +20,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Terramate
-        uses: terramate-io/terramate-action@v1
+        uses: terramate-io/terramate-action@v2
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v1
