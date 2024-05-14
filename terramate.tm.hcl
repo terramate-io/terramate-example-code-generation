@@ -1,5 +1,5 @@
 terramate {
-  required_version = "~> 0.6.0"
+  required_version = "~> 0.8.4"
 
   config {
     run {
