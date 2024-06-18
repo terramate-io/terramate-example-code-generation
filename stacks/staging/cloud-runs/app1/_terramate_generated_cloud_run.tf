@@ -3,10 +3,10 @@
 module "cloud_run_app" {
   iam = [
     {
-      role = "roles/run.invoker"
       members = [
         "allUsers",
       ]
+      role = "roles/run.invoker"
     },
   ]
   image                = "gcr.io/cloudrun/hello:latest"
